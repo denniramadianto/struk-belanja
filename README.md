@@ -14,6 +14,10 @@ lengkap dengan **ukuran kemasan (ml/gram)**.
 
 ## ✨ Fitur
 
+> ⚠️ **Status v1.0:** APK sudah berhasil di-build dan lolos verifikasi signature.
+> Belum diuji di HP fisik — kabari kalau ada yang force close / OCR tidak jalan,
+> sertakan merek HP & versi Android.
+
 | Fitur | Keterangan |
 |---|---|
 | 📷 **Foto struk** | Ambil foto langsung dari kamera atau pilih dari galeri |
