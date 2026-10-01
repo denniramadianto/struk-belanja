@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
+import com.google.mlkit.common.MlKit
 import id.my.sir.strukbelanja.ocr.MlKitOcr
 import id.my.sir.strukbelanja.parser.ReceiptParser
 import java.io.File
@@ -31,6 +32,7 @@ class ScanActivity : Activity() {
     override fun onCreate(b: Bundle?) {
         super.onCreate(b)
         setContentView(R.layout.activity_scan)
+        try { MlKit.initialize(this) } catch (_: Exception) {}
 
         ivFoto = findViewById(R.id.ivFoto)
         tvStatus = findViewById(R.id.tvStatus)
