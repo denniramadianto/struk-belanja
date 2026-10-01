@@ -1,0 +1,11 @@
+# Build & rilis — jangan commit
+*.apk
+*.keystore
+*.jks
+.build-tmp/
+# IDE & OS
+.idea/
+*.iml
+.DS_Store
+# Dependensi unduhan (diambil ulang saat build)
+libs/
