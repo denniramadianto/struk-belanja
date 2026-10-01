@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hijau">#2E7D32</color>
+    <color name="hijau_muda">#E8F5E9</color>
+    <color name="aksen">#FF8F00</color>
+    <color name="teks">#212121</color>
+    <color name="teks_samar">#757575</color>
+    <color name="merah">#C62828</color>
+    <color name="biru">#1565C0</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="abu_bg">#F5F5F5</color>
+</resources>

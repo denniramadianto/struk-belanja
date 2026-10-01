@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/abu_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧾 Struk Belanja"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/putih"
+        android:background="@color/hijau"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/etCari"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="🔎 Cari barang… mis. pepsodent"
+            android:inputType="text"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="＋&#10;Struk"
+            android:textColor="@color/putih"
+            android:backgroundTint="@color/aksen" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvHasilCariLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hasil pencarian barang"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvCari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:dividerHeight="1dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Struk"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:paddingBottom="4dp" />
+
+    <ListView
+        android:id="@+id/lvStruk"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnExport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="📤 CSV"
+            android:textSize="13sp" />
+        <Button
+            android:id="@+id/btnTelegram"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="✈️ Backup"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>
