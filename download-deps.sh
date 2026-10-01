@@ -46,4 +46,26 @@ dl "com/google/android/datatransport/transport-backend-cct/2.3.3/transport-backe
    "transport-backend-cct-2.3.3.aar"
 dl "com/google/android/datatransport/transport-runtime/2.2.6/transport-runtime-2.2.6.aar" \
    "transport-runtime-2.2.6.aar"
+# Dependensi inisialisasi ML Kit (MlKitContext butuh firebase-components;
+# tanpanya MlKit.initialize() -> NoClassDefFoundError -> force close saat dibuka)
+dl "com/google/firebase/firebase-components/16.1.0/firebase-components-16.1.0.aar" \
+   "firebase-components-16.1.0.aar"
+dl "com/google/firebase/firebase-annotations/16.2.0/firebase-annotations-16.2.0.jar" \
+   "firebase-annotations-16.2.0.jar"
+dl "com/google/firebase/firebase-encoders/16.1.0/firebase-encoders-16.1.0.jar" \
+   "firebase-encoders-16.1.0.jar"
+dl "com/google/firebase/firebase-encoders-json/17.1.0/firebase-encoders-json-17.1.0.aar" \
+   "firebase-encoders-json-17.1.0.aar"
+if [ ! -f "$LIBS/annotation-1.5.0.jar" ]; then
+  curl -sL --max-time 120 -o "$LIBS/annotation-1.5.0.jar" \
+    "$BASE/androidx/annotation/annotation/1.5.0/annotation-1.5.0.jar"
+fi
+# Dependensi vision-common (dipakai InputImage/fromBitmap -> odml MlImage)
+dl "com/google/android/odml/image/1.0.0-beta1/image-1.0.0-beta1.aar" \
+   "image-1.0.0-beta1.aar"
+dl "androidx/exifinterface/exifinterface/1.0.0/exifinterface-1.0.0.aar" \
+   "exifinterface-1.0.0.aar"
+# androidx.core: ContextCompat dipakai model loader ML Kit
+dl "androidx/core/core/1.13.0/core-1.13.0.aar" \
+   "core-1.13.0.aar"
 echo "[deps] selesai: $(ls "$LIBS"/*.aar | wc -l) AAR"
