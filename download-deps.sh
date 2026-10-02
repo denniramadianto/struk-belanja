@@ -68,4 +68,9 @@ dl "androidx/exifinterface/exifinterface/1.0.0/exifinterface-1.0.0.aar" \
 # androidx.core: ContextCompat dipakai model loader ML Kit
 dl "androidx/core/core/1.13.0/core-1.13.0.aar" \
    "core-1.13.0.aar"
+# Dependensi init ML Kit (javax.inject dari Maven Central)
+if [ ! -f "$LIBS/javax.inject-1.jar" ]; then
+  curl -sL --max-time 120 -o "$LIBS/javax.inject-1.jar" \
+    "https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar"
+fi
 echo "[deps] selesai: $(ls "$LIBS"/*.aar | wc -l) AAR"
