@@ -68,6 +68,22 @@ dl "androidx/exifinterface/exifinterface/1.0.0/exifinterface-1.0.0.aar" \
 # androidx.core: ContextCompat dipakai model loader ML Kit
 dl "androidx/core/core/1.13.0/core-1.13.0.aar" \
    "core-1.13.0.aar"
+# androidx.collection (ArraySet dipakai saat runtime ML Kit).
+# AAR-nya tidak tersedia di repo (404); versi KMP (-jvm) tidak bisa diproses
+# D8 build-tools 34. Solusi: compile sendiri dari sources JAR 1.1.0 (Java klasik).
+if [ ! -f "$LIBS/collection-classes-1.1.0.jar" ]; then
+  export PATH="$HOME/workspace/jdk17/jdk-17.0.11+9/bin:$PATH"
+  echo "  compile: androidx.collection dari sources..."
+  t="$(mktemp -d)"
+  curl -sL --max-time 120 -o "$t/src.jar" \
+    "$BASE/androidx/collection/collection/1.1.0/collection-1.1.0-sources.jar"
+  (cd "$t" && unzip -q -o src.jar && mkdir -p cls && \
+    javac -nowarn -cp "$LIBS/annotation-1.5.0.jar" -d cls $(find androidx/collection -name "*.java") && \
+    (cd cls && jar cf "$LIBS/collection-classes-1.1.0.jar" .))
+  rm -rf "$t"
+fi
+dl "androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.aar" \
+   "versionedparcelable-1.1.1.aar"
 # Dependensi init ML Kit (javax.inject dari Maven Central)
 if [ ! -f "$LIBS/javax.inject-1.jar" ]; then
   curl -sL --max-time 120 -o "$LIBS/javax.inject-1.jar" \
